@@ -20,6 +20,7 @@ local table = {}
     -- __call(self, ...)                : Called when the table is used like a function.
     -- __len(a)                         : Called when using the length operator (#a).
     -- __iter(a)                        : (Luau) Used for custom for-loop iteration.
+    -- __mode                           : (Meta-field) Declares a table as weak (`"k"`, `"v"`, or `"kv"`), allowing garbage collection of keys/values. 
 
 local meta = {
     __index = function() ... end
