@@ -5,6 +5,12 @@ local rotation = CFrame.Angles(0, math.rad(90), 0)                              
 local lookAtCf = CFrame.lookAt(Vector3.new(0, 5, 0), Vector3.new(10, 5, 10))        -- Creates a CFrame looking at target point
 local lookAlongCf = CFrame.lookAlong(Vector3.new(0, 0, -1))                         -- Creates a CFrame facing along a direction vector
 local axisAngleCf = CFrame.fromAxisAngle(Vector3.new(1, 0, 0), math.rad(90))        -- Creates a CFrame rotated around an axis by an angle
+local fromMatrixCf = CFrame.fromMatrix(                                             -- Creates a CFrame at (0,0,0) with custom rotation axes (here, the identity/orientation is unchanged)
+    Vector3.new(0, 0, 0),                           -- Position
+    Vector3.new(1, 0, 0),                           -- Right (X axis)
+    Vector3.new(0, 1, 0),                           -- Up (Y axis)
+    Vector3.new(0, 0, 1)                            -- Back (Z axis)
+)                                                                                   
 
 -- Methods:
 local exampleCF = cf1 * CFrame.new(0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0, 0, 1)            -- Example of skewed rotation matrix
