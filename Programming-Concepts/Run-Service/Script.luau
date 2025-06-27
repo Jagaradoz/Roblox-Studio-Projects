@@ -44,10 +44,11 @@ RunService:Set3dRenderingEnabled(false)   -- Disables rendering (useful for benc
         -- The 'callback' function receives deltaTime as an argument.
         -- Lower priorities run first; higher priorities run later.
         -- Enum.RenderPriority values (from highest priority/earliest to lowest/later):
-            -- Enum.RenderPriority.Input.Value         -- 0       : Runs first, right after input processing
-            -- Enum.RenderPriority.Camera.Value        -- 100     : Default for camera scripts
-            -- Enum.RenderPriority.Character.Value     -- 200     : Character updates
-            -- Enum.RenderPriority.Last.Value          -- 2000    : Runs last, after everything else
+                -- Enum.RenderPriority.First.Value            -- -100      : Runs before everything else (earliest possible)
+                -- Enum.RenderPriority.Input.Value            -- 0         : Runs after First, for input processing
+                -- Enum.RenderPriority.Camera.Value           -- 100       : For camera scripts/updates
+                -- Enum.RenderPriority.Character.Value        -- 200       : Character animation/logic
+                -- Enum.RenderPriority.Last.Value             -- 2000      : Runs last, after all others
 RunService:BindToRenderStep("CustomStep", Enum.RenderPriority.Input.Value, function(deltaTime)
     -- This function will run every frame, right after input is processed, before rendering.
     -- Example: print("Running in custom render step", deltaTime)
