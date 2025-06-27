@@ -32,8 +32,31 @@ local isServer = RunService:IsServer()
 local isClient = RunService:IsClient()
 
 -- 4. Other RunService Methods:
-RunService:Set3dRenderingEnabled(bool)                              -- Enable or disable 3D rendering (mostly used in Studio for testing)
-RunService:BindToRenderStep(name, priority, callback)               -- Binds a function to RenderStepped with a priority for precise control over render order
-RunService:UnbindFromRenderStep(name)                               -- Removes a previously bound RenderStep callback
-RunService:Run()                                                    -- Starts the game loop (usually not called by developers)
-RunService:Pause()                                                  -- Pauses the game loop (used internally)
+
+    -- :Set3dRenderingEnabled(bool)
+        -- Enables or disables 3D rendering. 
+        -- When false, the 3D world will not be rendered, but scripts and logic continue running.
+RunService:Set3dRenderingEnabled(true)    -- Enables rendering
+RunService:Set3dRenderingEnabled(false)   -- Disables rendering (useful for benchmarking in Studio)
+
+    -- :BindToRenderStep(name, priority, callback)
+        -- Binds a function to the RenderStepped event with a unique name and a priority number.
+        -- The 'callback' function receives deltaTime as an argument.
+        -- Lower priorities run first; higher priorities run later.
+        -- Enum.RenderPriority values (from highest priority/earliest to lowest/later):
+            -- Enum.RenderPriority.Input.Value         -- 0       : Runs first, right after input processing
+            -- Enum.RenderPriority.Camera.Value        -- 100     : Default for camera scripts
+            -- Enum.RenderPriority.Character.Value     -- 200     : Character updates
+            -- Enum.RenderPriority.Last.Value          -- 2000    : Runs last, after everything else
+RunService:BindToRenderStep("CustomStep", Enum.RenderPriority.Input.Value, function(deltaTime)
+    -- This function will run every frame, right after input is processed, before rendering.
+    -- Example: print("Running in custom render step", deltaTime)
+end)
+
+    -- :UnbindFromRenderStep(name)
+        -- Unbinds/removes a previously bound RenderStep by its unique name.
+        -- Use this to stop running the custom step when it's no longer needed.
+RunService:UnbindFromRenderStep("CustomStep")
+
+    -- :Run()                : Starts the game loop (used internally by Roblox engine, almost never by developers).
+    -- :Pause()              : Pauses the game loop (again, internal to engine).
