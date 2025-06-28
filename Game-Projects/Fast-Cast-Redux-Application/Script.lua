@@ -2,6 +2,8 @@
 local FastCast = require(path.to.FastCastRedux)                                             -- Load the FastCastRedux module for advanced projectile simulation
 local PartCache = require(path.to.PartCache)                                                -- Load the PartCache module for efficient part reuse (object pooling)
 
+FastCast.VisualizeCasts = false                                                             -- Close or Open projectile visualizations
+
 -- Create a Part instance to serve as a template for your bullet visuals
 local bulletTemplate = Instance.new("Part")
 bulletTemplate.Size = Vector3.new(0.2, 0.2, 2)
