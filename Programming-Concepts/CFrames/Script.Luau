@@ -15,12 +15,16 @@ local cfH = CFrame.lookAlong(Vector3.new(0,0,-1))                       -- Creat
 
 local cfIdentity = CFrame.identity                                      -- Constant for no translation/rotation
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+
 -- Properties
 local pos = cfA.Position                                                -- Vector3: translation part
 local orient = {cfA:GetComponents()}                                    -- 12 floats: position (x,y,z) and rotation matrix (R00..R22)
 local rightVec = cfA.RightVector                                        -- (1,0,0) unit vector for right direction
 local upVec = cfA.UpVector                                              -- (0,1,0) unit vector for up direction
 local lookVec = cfA.LookVector                                          -- (0,0,-1) unit vector for forward direction
+
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Methods
 local cfI = cfA:Inverse()                                               -- Returns inverse CFrame (undoes cfA)
@@ -33,18 +37,26 @@ local cfO = cfA:PointToObjectSpace(Vector3.new(1,0,0))                  -- World
 local cfP = cfA:VectorToWorldSpace(Vector3.new(0,1,0))                  -- Transforms direction vector (ignores translation)
 local cfQ = cfA:VectorToObjectSpace(Vector3.new(0,1,0))                 -- World direction to object local space
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+
 -- Operators
 local cfR = cfA * cfB                                                   -- Composition: transforms cfB by cfA (applies cfA then cfB)
 local cfS = cfA + Vector3.new(0,1,0)                                    -- Shifts position by vector (rarely used)
 local eq = (cfA == cfA)                                                 -- Returns true if both CFrames are numerically identical
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+
 -- Conversions
 local arr = {cfA:GetComponents()}                                       -- CFrame to 12 numbers (x,y,z, R00..R22)
 local cfT = CFrame.new(table.unpack(arr))                               -- 12 numbers to CFrame
 
+-------------------------------------------------------------------------------------------------------------------------------------------
+
 -- Special and Edge cases
 local angle, axis = cfA:ToAxisAngle()                                   -- Decompose rotation into axis, angle
 local x,y,z, R00,R01,R02,R10,R11,R12,R20,R21,R22 = cfA:GetComponents()  -- All 12 components
+
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 -- Notes
     -- CFrame stores both position and orientation (rotation).
