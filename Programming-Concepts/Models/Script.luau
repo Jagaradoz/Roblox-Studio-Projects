@@ -6,8 +6,6 @@ local root = Instance.new("Part")
 -- model.WorldPivot                     : CFrame: computed pivot, model-space or primary part
 -- model.LevelOfDetail                  : Enum.ModelLevelOfDetail: LOD for streaming/visualization
 -- model.Scale                          : number (readonly): hierarchical scale factor (since 2023)
--- model:GetAttribute(attr)             : get custom attribute value
--- model:SetAttribute(attr,val)         : set custom attribute
 root.Name = "Root"
 root.Parent = model
 model.PrimaryPart = root
