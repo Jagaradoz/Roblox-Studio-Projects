@@ -50,10 +50,13 @@ workspace:FindPartOnRay(ray, ignoreDescendantsInstance, terrainCellsAreCubes, ig
 workspace:FindPartOnRayWithWhitelist(ray, whitelist, ignoreWater)                               -- Like above, but only hits parts in 'whitelist' table
 workspace:FindPartOnRayWithIgnoreList(ray, ignoreList, ignoreWater)                             -- Like above, but skips parts/instances in 'ignoreList'
 workspace:Raycast(origin, direction, raycastParams)                                             -- Modern raycast; returns RaycastResult for first part hit along the line
+workspace:Shapecast(shape, params)                                                              -- Casts a geometric shape (box, capsule, etc) through space; returns details on all intersections (advanced physics query)
+workspace:Spherecast(origin, direction, radius, params)                                         -- Casts a sphere of given radius along a line, returns hits; useful for "thick" raycasts or area checks
 workspace:GetPartsInRegion3(region3, ignoreDescendants, maxParts)                               -- Returns all parts overlapping a Region3 area; can ignore descendants/limit result count
 workspace:GetPartsInPart(part)                                                                  -- Returns all parts touching or overlapping the given 'part'
 workspace:GetPartBoundsInBox(cframe, size, overlapParams)                                       -- Returns all parts intersecting a box defined by 'cframe' and 'size'
 workspace:BulkMoveTo(instances, cframes, welds)                                                 -- Moves multiple parts to new positions/orientations efficiently; maintains welds if specified
+
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------
