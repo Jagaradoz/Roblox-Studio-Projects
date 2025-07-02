@@ -9,8 +9,9 @@ The official Roblox game development tool, Roblox Studio, enables users to desig
 
 ## Repository Structure
 
-This repository consists of 2 main sections with different purposes:
+This repository consists of 3 main sections with different purposes:
 -   **Game-Projects**: Skills of game development, creativity and technical expertise.
+-   **Modules**: Useful Third Party modules, And applications.
 -   **Programming Concepts**: Core Knowledge, Main ideas, And Tricks.
 ## Give This Repository Your Support
 
