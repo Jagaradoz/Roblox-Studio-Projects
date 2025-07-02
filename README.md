@@ -11,8 +11,9 @@ The official Roblox game development tool, Roblox Studio, enables users to desig
 
 This repository consists of 3 main sections with different purposes:
 -   **Game-Projects**: Skills of game development, creativity and technical expertise.
--   **Modules**: Useful Third Party modules, And applications.
--   **Programming Concepts**: Core Knowledge, Main ideas, And Tricks.
+-   **Programming-Concepts**: Core Knowledge, Main ideas, And Tricks.
+-   **Third-Party-Modules**: Useful Third Party modules, And applications.
+
 ## Give This Repository Your Support
 
 [](https://github.com/Jagaradoz/C-Projects#give-this-repository-your-support)
