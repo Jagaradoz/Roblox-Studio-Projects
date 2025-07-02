@@ -63,3 +63,5 @@ obj:Destroy()                                                   -- all internal 
 -- Caution:
     -- Passing arguments to functions is not supported; store references with upvalues if needed
     -- Use Trove for every object/class to avoid memory leaks
+
+-- The Module: https://create.roblox.com/store/asset/13012417971/Trove
