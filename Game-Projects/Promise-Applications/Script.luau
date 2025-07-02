@@ -110,3 +110,5 @@ local cancelToken = promise:cancel()
 promise:catch(function(err)
 	print("Cancelled promise caught:", err)
 end)
+
+-- The Module: https://create.roblox.com/store/asset/11373035067/Promise-Library-for-Luau-v400
