@@ -2,7 +2,7 @@
 
 These projects I developed since 2025 showcase my understanding of Roblox game development using Lua (Luau) scripting and Roblox Studio tools. Each project highlights practical game mechanics, UI design, and efficient scripting techniques.
 
-# What is Roblox Studio?
+## What is Roblox Studio?
 The official Roblox game development tool, Roblox Studio, enables users to design, develop, and write their own games and experiences. It offers a code editor with Lua (Luau) scripting, terrain editors, and building tools all in a visual interface. The Roblox platform allows developers to test and release their games directly.
 
 ![Roblox Studio Version](https://img.shields.io/badge/Version-677-blue)
